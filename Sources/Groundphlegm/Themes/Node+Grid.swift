@@ -9,10 +9,9 @@ import Foundation
 import Plot
 
 extension Node where Context == HTML.BodyContext {
-    static func grid(id: String, _ nodes: Node...) -> Node {
+    static func grid(_ nodes: Node...) -> Node {
         .div(
             .class("grid"),
-            .id(id),
             .group(nodes)
         )
     }

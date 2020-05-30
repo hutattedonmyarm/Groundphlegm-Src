@@ -26,23 +26,24 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .head(for: index, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
-                .grid(id: "main-grid",
+                .grid(
+                    .class("grid main-grid"),
                     .sidebar(for: context.site),
                     .wrapper(
-                    .class("wrapper main-wrapper"),
+                        .class("wrapper main-wrapper"),
                         .h1(.text(index.title)),
                         .p(
                             .class("description"),
                             .text(context.site.description)),
                         .h2("Latest content"),
                         .itemList(
-                          for: context.allItems(
+                            for: context.allItems(
                               sortedBy: \.date,
                               order: .descending
-                          ),
-                          on: context.site
-                      )
-                  )
+                            ),
+                            on: context.site
+                        )
+                    )
                 ),
                 .footer(for: context.site)
             )
@@ -56,9 +57,14 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .head(for: section, on: context.site),
             .body(
                 .header(for: context, selectedSection: section.id),
-                .wrapper(
-                    .h1(.text(section.title)),
-                    .itemList(for: section.items, on: context.site)
+                .grid(
+                    .class("grid main-grid"),
+                    .sidebar(for: context.site),
+                    .wrapper(
+                        .class("wrapper main-wrapper"),
+                        .h1(.text(section.title)),
+                        .itemList(for: section.items, on: context.site)
+                      )
                 ),
                 .footer(for: context.site)
             )
@@ -73,15 +79,20 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .body(
                 .class("item-page"),
                 .header(for: context, selectedSection: item.sectionID),
-                .wrapper(
-                    .article(
-                        .div(
-                            .class("content"),
-                            .contentBody(item.body)
-                        ),
-                        .span("Tagged with: "),
-                        .tagList(for: item, on: context.site)
-                    )
+                .grid(
+                    .class("grid main-grid"),
+                    .sidebar(for: context.site),
+                    .wrapper(
+                        .class("wrapper main-wrapper"),
+                        .article(
+                            .div(
+                                .class("content"),
+                                .contentBody(item.body)
+                            ),
+                            .span("Tagged with: "),
+                            .tagList(for: item, on: context.site)
+                        )
+                      )
                 ),
                 .footer(for: context.site)
             )
@@ -108,19 +119,41 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .head(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
-                .wrapper(
-                    .h1("Browse all tags"),
-                    .ul(
-                        .class("all-tags"),
-                        .forEach(page.tags.sorted()) { tag in
-                            .li(
-                                .class("tag"),
-                                .a(
-                                    .href(context.site.path(for: tag)),
-                                    .text(tag.string)
+                /*
+                 .grid(
+                     .class("main-grid"),
+                     .sidebar(for: context.site),
+                     .wrapper(
+                         .class("wrapper main-wrapper"),
+                         .article(
+                             .div(
+                                 .class("content"),
+                                 .contentBody(item.body)
+                             ),
+                             .span("Tagged with: "),
+                             .tagList(for: item, on: context.site)
+                         )
+                       )
+                 ),
+                 */
+                .grid(
+                    .class("grid main-grid"),
+                    .sidebar(for: context.site),
+                    .wrapper(
+                        .class("wrapper main-wrapper"),
+                        .h1("Browse all tags"),
+                        .ul(
+                            .class("all-tags"),
+                            .forEach(page.tags.sorted()) { tag in
+                                .li(
+                                    .class("tag"),
+                                    .a(
+                                        .href(context.site.path(for: tag)),
+                                        .text(tag.string)
+                                    )
                                 )
-                            )
-                        }
+                            }
+                        )
                     )
                 ),
                 .footer(for: context.site)
@@ -135,23 +168,27 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .head(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
-                .wrapper(
-                    .h1(
-                        "Tagged with ",
-                        .span(.class("tag"), .text(page.tag.string))
-                    ),
-                    .a(
-                        .class("browse-all"),
-                        .text("Browse all tags"),
-                        .href(context.site.tagListPath)
-                    ),
-                    .itemList(
-                        for: context.items(
-                            taggedWith: page.tag,
-                            sortedBy: \.date,
-                            order: .descending
+                .grid(
+                    .class("grid main-grid"),
+                    .wrapper(
+                        .class("wrapper main-wrapper"),
+                        .h1(
+                            "Tagged with ",
+                            .span(.class("tag"), .text(page.tag.string))
                         ),
-                        on: context.site
+                        .a(
+                            .class("browse-all"),
+                            .text("Browse all tags"),
+                            .href(context.site.tagListPath)
+                        ),
+                        .itemList(
+                            for: context.items(
+                                taggedWith: page.tag,
+                                sortedBy: \.date,
+                                order: .descending
+                            ),
+                            on: context.site
+                        )
                     )
                 ),
                 .footer(for: context.site)

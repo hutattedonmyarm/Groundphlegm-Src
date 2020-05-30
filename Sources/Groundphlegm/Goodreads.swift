@@ -22,13 +22,13 @@ extension Booklist: Collection {
     typealias Element = Book
     typealias Index = Int
     
-
+    
     // The upper and lower bounds of the collection, used in iterations
     var startIndex: Index { return books.startIndex }
     var endIndex: Index { return books.endIndex }
 
     // Required subscript, based on a dictionary index
-    subscript(index: Index) -> Iterator.Element {
+    subscript(index: Index) -> Element {
         get { return books[index] }
     }
 
