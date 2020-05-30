@@ -1,6 +1,7 @@
 import Foundation
 import Publish
 import Plot
+import OAuthSwift
 
 // This type acts as the configuration for your website.
 struct Groundphlegm: Website {
@@ -14,12 +15,17 @@ struct Groundphlegm: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
+    var url = URL(string: "https://www.wedro.online/Groundphlegm")!
     var name = "Groundphlegm"
-    var description = "A description of Groundphlegm"
+    var description = "Mostly nonsense"
     var language: Language { .english }
     var imagePath: Path? { nil }
+    var booklists = [Booklist.empty(for: "Currently Reading")]
 }
 
+let currentlyReading = Goodreads.currentlyReading()
+
 // This will generate your website using the built-in Foundation theme:
-try Groundphlegm().publish(withTheme: .foundation)
+try Groundphlegm(booklists: [currentlyReading])
+    .publish(withTheme: .orange)
+

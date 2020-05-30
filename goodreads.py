@@ -141,7 +141,7 @@ class Goodreads:
         started_at=datetime.datetime.isoformat(datetime.datetime.strptime(started_at.text, fmt)) if started_at != None else None,
         top_shelves=top_shelves,
         authors=authors)
-    books.append(book)  
+      books.append(book)  
     return books
       
   
