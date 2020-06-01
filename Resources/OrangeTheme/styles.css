@@ -256,13 +256,13 @@ img.social, .social.svg-image {
   vertical-align: top;
 }
 
-.list.social-list div {
+.list.contact-item div {
   padding-left: 10%;
   text-align: left;
   margin-top: 0.25em;
 }
 
-.list.social-list div:first-of-type {
+.list.contact-item div:first-of-type {
   margin-top: 20px;
 }
 
