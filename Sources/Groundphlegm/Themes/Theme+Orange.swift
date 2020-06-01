@@ -119,23 +119,6 @@ private struct OrangeHTMLFactory: HTMLFactory {
             .head(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
-                /*
-                 .grid(
-                     .class("main-grid"),
-                     .sidebar(for: context.site),
-                     .wrapper(
-                         .class("wrapper main-wrapper"),
-                         .article(
-                             .div(
-                                 .class("content"),
-                                 .contentBody(item.body)
-                             ),
-                             .span("Tagged with: "),
-                             .tagList(for: item, on: context.site)
-                         )
-                       )
-                 ),
-                 */
                 .grid(
                     .class("grid main-grid"),
                     .sidebar(for: context.site),
