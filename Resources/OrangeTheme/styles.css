@@ -89,6 +89,12 @@ h1 {
     font-size: 2em;
 }
 
+article h1 {
+    margin-bottom: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--main-accent-color);
+}
+
 h2 {
     margin: 20px 0;
 }
@@ -99,6 +105,12 @@ p {
 
 a {
     color: inherit;
+}
+
+.pubdate {
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: smaller;
 }
 
 .description {

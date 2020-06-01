@@ -87,7 +87,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                         .article(
                             .div(
                                 .class("content"),
-                                .contentBody(item.body)
+                                .post(for: item, on: context.site)
                             ),
                             .span("Tagged with: "),
                             .tagList(for: item, on: context.site)

@@ -22,6 +22,18 @@ struct Groundphlegm: Website {
     var imagePath: Path? { nil }
     var booklists = [Booklist.empty(for: "Currently Reading")]
     var social = SocialLink.all
+    
+    var dateTimeFormatter = DateFormatter(timeStyle: .medium, dateStyle: .medium)
+    var dateFormatter: DateFormatter {
+        let f = self.dateTimeFormatter
+        f.timeStyle = .none
+        return f
+    }
+    var timeFormatter: DateFormatter {
+        let f = self.dateTimeFormatter
+        f.dateStyle = .none
+        return f
+    }
 }
 
 let currentlyReading = Goodreads.currentlyReading()
