@@ -15,7 +15,7 @@ struct Groundphlegm: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://www.wedro.online/Groundphlegm")!
+    var url = URL(string: "https://groundphlegm.wedro.online/")!
     var name = "Groundphlegm"
     var description = "Mostly nonsense"
     var language: Language { .english }
@@ -44,6 +44,8 @@ try Groundphlegm(booklists: [currentlyReading]).publish(using: [
     .generateHTML(withTheme: .orange),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
-    .embedSvgStyles()
+    .embedSvgStyles(),
+    /*.deploy(using: .ftp(server: "", user: "", password: "", path: Path("")))*/
+    .deploy(using: .gitHub("hutattedonmyarm/Groundphlegm-Output", useSSH: true))
 ])
 

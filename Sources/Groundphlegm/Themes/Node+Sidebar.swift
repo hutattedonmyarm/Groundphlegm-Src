@@ -24,7 +24,7 @@ extension Node where Context == HTML.BodyContext {
     static func social(for site: Groundphlegm) -> Node {
         .if(!site.social.isEmpty,
             .div(
-                .class("list social-list"),
+                .class("list contact-item"),
                 .span(.text("Social")),
                 .forEach(site.social) { socialLink in
                     .div(

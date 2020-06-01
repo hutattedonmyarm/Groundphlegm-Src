@@ -35,12 +35,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    /*background-color: var(--main-accent-color);*/
 }
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     header {
-        /* "!important" is needed so that the set value gets overwritten */
         background-color: var(--main-header-color);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -256,13 +254,13 @@ img.social, .social.svg-image {
   vertical-align: top;
 }
 
-.list.social-list div {
+.list.contact-item div {
   padding-left: 10%;
   text-align: left;
   margin-top: 0.25em;
 }
 
-.list.social-list div:first-of-type {
+.list.contact-item div:first-of-type {
   margin-top: 20px;
 }
 
