@@ -21,11 +21,17 @@ struct Groundphlegm: Website {
     var language: Language { .english }
     var imagePath: Path? { nil }
     var booklists = [Booklist.empty(for: "Currently Reading")]
+    var social = SocialLink.all
 }
 
 let currentlyReading = Goodreads.currentlyReading()
 
-// This will generate your website using the built-in Foundation theme:
-try Groundphlegm(booklists: [currentlyReading])
-    .publish(withTheme: .orange)
+try Groundphlegm(booklists: [currentlyReading]).publish(using: [
+    .addMarkdownFiles(),
+    .copyResources(),
+    .generateHTML(withTheme: .orange),
+    .generateRSSFeed(including: [.posts]),
+    .generateSiteMap(),
+    .embedSvgStyles()
+])
 

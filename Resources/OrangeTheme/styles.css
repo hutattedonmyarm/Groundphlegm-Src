@@ -2,11 +2,11 @@
     --main-bg-color: #fff;
     --main-text-color: #000;
     
-    --main-header-color: rgba(224, 98, 0, 0.9);
+    --main-header-color: rgba(224, 98, 0, 0.8);
     --main-accent-color: rgb(224, 98, 0);
     --text-on-accent-color: #eee;
     
-    --secondary-bg-color: #bbb;
+    --secondary-bg-color: #ddd;
 }
 
 * {
@@ -35,9 +35,23 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--main-header-color);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /*background-color: var(--main-accent-color);*/
+}
+
+@supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+    header {
+        /* "!important" is needed so that the set value gets overwritten */
+        background-color: var(--main-header-color);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+}
+
+@supports (not (backdrop-filter: blur(20px))) and (not (-webkit-backdrop-filter: blur(20px))) {
+    header {
+        /* "!important" is needed so that the set value gets overwritten */
+        background-color: var(--main-accent-color);
+    }
 }
 
 header .wrapper {
@@ -162,25 +176,29 @@ a {
 .sidebar {
     grid-column: 2;
     grid-row: 2;
+    border-radius: 10px;
+    background: var(--secondary-bg-color);
 }
+
 
 .wrapper.main-wrapper {
     grid-column: 3;
     grid-row: 1/-1;
 }
 
-.booklist {
+.sidebar .list {
     background: var(--secondary-bg-color);
     padding: 10px;
     border-radius: 10px;
     padding-top: 20px;
 }
 
-.booklist span {
+.sidebar .list span {
   background: var(--main-accent-color);
   padding: 8px;
   border-radius: 10px;
   box-sizing: content-box;
+  color: var(--text-on-accent-color);
 }
 
 .booklist-book {
@@ -195,25 +213,45 @@ a {
     padding-bottom: 10px;
 }
 
-.booklist .cover {
+.sidebar .list .cover {
     grid-row: 2 / -1;
     grid-column: 1;
 }
 
-.booklist .booktitle {
+.sidebar .list .booktitle {
     grid-row: 2;
     grid-column: 2;
     font-weight: bold;
 }
 
-.booklist .bookauthor {
+.sidebar .list .bookauthor {
     grid-row: 3;
     grid-column: 2;
 }
 
-.booklist .bookstartdate {
+.sidebar .list .bookstartdate {
     grid-row: 4;
     grid-column: 2;
+}
+
+img.social, .social.svg-image {
+    height: 1em;
+    margin-right: 5px;
+    color: white;
+}
+
+.social.svg-image + a {
+  vertical-align: top;
+}
+
+.list.social-list div {
+  padding-left: 10%;
+  text-align: left;
+  margin-top: 0.25em;
+}
+
+.list.social-list div:first-of-type {
+  margin-top: 20px;
 }
 
 footer {
@@ -225,7 +263,7 @@ footer {
         --main-bg-color: #333;
         --main-text-color: #fff;
         
-        --main-header-color: rgba(224, 98, 0, 0.9);
+        --main-header-color: rgba(224, 98, 0, 0.8);
         --main-accent-color: rgb(224, 98, 0);
         --text-on-accent-color: #eee;
         
@@ -260,17 +298,17 @@ footer {
         margin-top: 20px;
     }
     
-    .booklist .cover {
+    .sidebar .list .cover {
         grid-row: 3;
         grid-column: 1;
     }
     
-    .booklist .booktitle {
+    .sidebar .list .booktitle {
         grid-row: 1;
         grid-column: 1;
     }
     
-    .booklist .bookauthor {
+    .sidebar .list .bookauthor {
         grid-row: 2;
         grid-column: 1;
     }
@@ -290,7 +328,7 @@ footer {
         grid-column: 1/-1;
         grid-row: 3;
         padding: 0 20px;
-        margin-bottom: 20px;
+        margin: 0 20px 20px;
     }
     
     .booklist-book {
@@ -300,18 +338,24 @@ footer {
         margin-top: 20px;
     }
     
-    .booklist .cover {
+    .sidebar .list .cover {
         grid-row: 1/-1;
         grid-column: 1;
     }
     
-    .booklist .booktitle {
+    .sidebar .list .booktitle {
         grid-row: 1;
         grid-column: 2;
     }
     
-    .booklist .bookauthor {
+    .sidebar .list .bookauthor {
         grid-row: 2;
         grid-column: 2;
+    }
+}
+
+@media(max-width: 400px) {
+   .sidebar {
+        margin: 0 5px 20px;
     }
 }

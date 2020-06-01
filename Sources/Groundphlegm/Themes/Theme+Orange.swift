@@ -13,7 +13,7 @@ extension Theme where Site == Groundphlegm {
     static var orange: Self {
         Theme(
             htmlFactory: OrangeHTMLFactory(),
-            resourcePaths: ["Resources/OrangeTheme/styles.css"]
+            resourcePaths: Set(["Resources/OrangeTheme/styles.css", "Resources/OrangeTheme/svg.css"] + SocialLink.icons.map{"Resources/OrangeTheme/svgs/\($0)"})
         )
     }
 }
