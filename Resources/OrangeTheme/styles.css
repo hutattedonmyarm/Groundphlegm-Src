@@ -95,6 +95,10 @@ article h1 {
     text-decoration-color: var(--main-accent-color);
 }
 
+article img {
+    max-width: 100%;
+}
+
 h2 {
     margin: 20px 0;
 }
