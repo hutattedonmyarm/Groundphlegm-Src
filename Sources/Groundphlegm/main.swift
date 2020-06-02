@@ -18,7 +18,7 @@ struct Groundphlegm: Website {
     // Update these properties to configure your website:
     var url = URL(string: "https://groundphlegm.wedro.online/")!
     var name = "Groundphlegm"
-    var description = "Mostly nonsense"
+    var description = #"Content-Type: "text/nonsense""#
     var language: Language { .english }
     var imagePath: Path? { nil }
     var booklists = [Booklist.empty(for: "Currently Reading")]
