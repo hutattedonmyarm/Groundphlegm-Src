@@ -12,7 +12,7 @@ import Publish
 extension Node where Context == HTML.BodyContext {
     static func post(for item: Item<Groundphlegm>, on site: Groundphlegm) -> Node {
         return .group(
-            .h1(markdown(item.title)),
+            .h1(markdown(item.metadata.detailsTitle ?? item.title)),
             .p(
                 .class("pubdate"),
                 .text("Published: "),

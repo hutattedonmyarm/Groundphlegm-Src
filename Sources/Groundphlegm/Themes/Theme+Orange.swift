@@ -70,7 +70,7 @@ extension Node where Context == HTML.DocumentContext {
         if description.isEmpty {
             description = site.description
         }
-        let base = Node<HTML.HeadContext>.base(.href("https://groundphlegm.wedro.online/"))
+        //let base = Node<HTML.HeadContext>.base(.href("https://groundphlegm.wedro.online/"))
 
         let h = Node.head(
             .encoding(.utf8),
@@ -90,7 +90,7 @@ extension Node where Context == HTML.DocumentContext {
                 let url = site.url(for: path)
                 return .socialImageLink(url)
             }),
-            base
+            .group(nodes)
         )
         return h
     }
@@ -101,7 +101,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                        context: PublishingContext<Groundphlegm>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site, nodes: [Node<HTML.HeadContext>]()),
+            .head(for: index, on: context.site, nodes: [Node<HTML.HeadContext>.base(.href(context.site.url.absoluteString))]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .grid(
@@ -287,15 +287,17 @@ private extension Node where Context == HTML.BodyContext {
         )
     }
 
-    static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
+    static func itemList(for items: [Item<Groundphlegm>], on site: Groundphlegm) -> Node {
         return .ul(
             .class("item-list"),
             .forEach(items) { item in
                 .li(.article(
-                    .h1(.a(
-                        .href(item.path),
-                        .text(item.title)
-                    )),
+                    .h1(
+                        .a(
+                            .href(item.path),
+                            .markdown(item.title)
+                        )
+                    ),
                     .tagList(for: item, on: site),
                     .p(.text(item.description))
                 ))

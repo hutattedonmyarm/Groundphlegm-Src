@@ -12,6 +12,7 @@ struct Groundphlegm: Website {
 
     struct ItemMetadata: WebsiteItemMetadata {
         // Add any site-specific metadata that you want to use here.
+        var detailsTitle: String? = nil
     }
 
     // Update these properties to configure your website:
@@ -40,12 +41,12 @@ let currentlyReading = Goodreads.currentlyReading()
 
 try Groundphlegm(booklists: [currentlyReading]).publish(using: [
     .addMarkdownFiles(),
+    .copyResources(at: "/Content/images", to: "/images", includingFolder: false),
     .copyResources(),
     .generateHTML(withTheme: .orange),
     .generateRSSFeed(including: [.posts]),
     .generateSiteMap(),
     .embedSvgStyles(),
-    /*.deploy(using: .ftp(server: "", user: "", password: "", path: Path("")))*/
     .deploy(using: .gitHub("hutattedonmyarm/Groundphlegm-Output", useSSH: true))
 ])
 
