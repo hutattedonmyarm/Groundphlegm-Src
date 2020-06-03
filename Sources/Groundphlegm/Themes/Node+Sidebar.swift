@@ -28,7 +28,11 @@ extension Node where Context == HTML.BodyContext {
                 .span(.text("Social")),
                 .forEach(site.social) { socialLink in
                     .div(
-                        .svgObject(data: "/\(socialLink.icon)", .class("social svg-image")),
+                        .svgObject(
+                            data: "/\(socialLink.icon)",
+                            .class("social svg-image"),
+                            .attribute(named: "role", value: "img"),
+                            .attribute(named: "title", value: socialLink.title)),
                         .a(.href(socialLink.url.absoluteString), .text(socialLink.displayName))
                     )
                 }
@@ -47,10 +51,9 @@ extension Node where Context == HTML.BodyContext {
                     .forEach(booklist) { book in
                         .div(
                             .class("booklist-book"),
-                            .img(.src(book.imageUrl.absoluteString), .class("cover")),
+                            .img(.src(book.imageUrl.absoluteString), .class("cover"), .alt("Cover for \(book.title)")),
                             .div(.a(.href(book.url.absoluteString), .text(book.title)), .class("booktitle")),
-                            .div(.text("By "), .text(book.authorList()), .class("bookauthor"))/*,
-                            .div(.text(book.startedAt.formatted(withDateStyle: .medium, andTimeStyle: .none)), .class("bookstartdate"))*/
+                            .div(.text("By "), .text(book.authorList()), .class("bookauthor"))
                         )
                     }
                 )

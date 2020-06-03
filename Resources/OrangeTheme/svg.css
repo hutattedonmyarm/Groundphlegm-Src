@@ -2,8 +2,8 @@
     --main-bg-color: #fff;
     --main-text-color: #000;
     
-    --main-header-color: rgba(224, 98, 0, 0.8);
-    --main-accent-color: rgb(224, 98, 0);
+    --main-header-color: rgba(193, 84, 1, 0.8);
+    --main-accent-color: rgb(193, 84, 1);
     --text-on-accent-color: #eee;
     
     --secondary-bg-color: #ddd;
@@ -14,9 +14,9 @@
         --main-bg-color: #333;
         --main-text-color: #fff;
         
-        --main-header-color: rgba(224, 98, 0, 0.8);
-        --main-accent-color: rgb(224, 98, 0);
-        --text-on-accent-color: #eee;
+        --main-header-color: rgba(193, 84, 1, 0.8);
+        --main-accent-color: rgb(193, 84, 1);
+        --text-on-accent-color: #fff;
         
         --secondary-bg-color: #444;
     }
