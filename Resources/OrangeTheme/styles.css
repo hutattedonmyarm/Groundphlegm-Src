@@ -18,7 +18,7 @@
 body {
     background: var(--main-bg-color);
     color: var(--main-text-color);
-    font-family: Helvetica, Arial;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     text-align: center;
     margin-top: 60px;
 }
@@ -35,7 +35,6 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    /*background-color: var(--main-accent-color);*/
 }
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
