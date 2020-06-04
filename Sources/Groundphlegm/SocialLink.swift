@@ -7,18 +7,6 @@
 
 import Foundation
 
-protocol FontAwesomeIcon {
-    var icon: String { get }
-    var iconType: IconType { get }
-    var embedCss: Bool { get }
-}
-
-struct Icon: FontAwesomeIcon {
-    let icon: String
-    let iconType: IconType
-    let embedCss: Bool
-}
-
 struct SocialLink: FontAwesomeIcon {
     var embedCss: Bool = true
     let title: String
@@ -26,12 +14,6 @@ struct SocialLink: FontAwesomeIcon {
     let url: URL
     let iconType: IconType
     let icon: String
-}
-
-enum IconType {
-    case brands
-    case solid
-    case regular
 }
 
 extension SocialLink {

@@ -16,6 +16,7 @@ extension Theme where Site == Groundphlegm {
             htmlFactory: OrangeHTMLFactory(),
             resourcePaths: Set([
                 "Resources/OrangeTheme/styles.css",
+                "Resources/OrangeTheme/styles_mobile.css",
                 "Resources/OrangeTheme/svg.css",
                 "Resources/OrangeTheme/svgs/solid/link.svg"
             ] + SocialLink.icons.map{"Resources/OrangeTheme/svgs/\($0)"})
@@ -28,15 +29,26 @@ extension HTML {
 }
 
 private struct OrangeHTMLFactory: HTMLFactory {
+    func makeHead(for location: Location, on site: Groundphlegm) -> Node<HTML.DocumentContext> {
+        .head(for: location, on: site,
+            .link(
+                .rel(.preload),
+                .href("/svg.css"),
+                .init(name: "as", value: "style")
+            ),
+            .link(
+                .rel(.stylesheet),
+                .href("/styles_mobile.css"),
+                .init(name: "media", value: "(max-width: 1200px)")
+            )
+        )
+    }
+    
     func makeIndexHTML(for index: Index,
                        context: PublishingContext<Groundphlegm>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site,
-                  .link(.rel(.preload),
-                .href("svg.css"),
-                .init(name: "as", value: "style"))
-            ),
+            makeHead(for: index, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .grid(
@@ -67,7 +79,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: section, on: context.site),
+            makeHead(for: section, on: context.site),
             .body(
                 .header(for: context, selectedSection: section.id),
                 .grid(
@@ -88,7 +100,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                       context: PublishingContext<Groundphlegm>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: item, on: context.site),
+            makeHead(for: item, on: context.site),
             .body(
                 .class("item-page"),
                 .header(for: context, selectedSection: item.sectionID),
@@ -116,7 +128,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                       context: PublishingContext<Groundphlegm>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            makeHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(.contentBody(page.body)),
@@ -129,7 +141,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                          context: PublishingContext<Groundphlegm>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            makeHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .grid(
@@ -161,7 +173,7 @@ private struct OrangeHTMLFactory: HTMLFactory {
                             context: PublishingContext<Groundphlegm>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            makeHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .grid(

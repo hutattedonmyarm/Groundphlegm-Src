@@ -16,7 +16,7 @@ extension Node where Context == HTML.BodyContext {
         return .group(
             .h1(
                 .markdownTitle(for: item),
-                .if(item.tags.contains(Tag("link")), .svgObject(data: "/" + site.linkPostIcon.icon))
+                .if(item.tags.contains(Tag("link")), .svgObject(data: "/" + Icon.link.icon))
             ),
             .p(
                 .class("pubdate"),
