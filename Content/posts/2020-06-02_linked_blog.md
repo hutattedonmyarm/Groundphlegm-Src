@@ -1,7 +1,7 @@
 ---
 date: 2020-06-02 08:43
 description: I link, therefore I am
-tags: article
+tags: article, meta
 title: Linklogging
 ---
 Initially I wanted to go towards the linklog style of content, mostly because "oh, look what I found" and a comment about it is what I do *anyways*, but obviously the first entry (and this one too!) had to be different. Whoops.
