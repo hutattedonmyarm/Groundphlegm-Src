@@ -28,7 +28,11 @@ private struct OrangeHTMLFactory: HTMLFactory {
                        context: PublishingContext<Groundphlegm>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site),
+            .head(for: index, on: context.site,
+                  .link(.rel(.preload),
+                .href("svg.css"),
+                .init(name: "as", value: "style"))
+            ),
             .body(
                 .header(for: context, selectedSection: nil),
                 .grid(

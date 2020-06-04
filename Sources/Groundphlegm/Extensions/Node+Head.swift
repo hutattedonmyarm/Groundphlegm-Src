@@ -39,11 +39,12 @@ extension Node where Context == HTML.DocumentContext {
     static func head<T: Website>(
         for location: Location,
         on site: T,
-        nodes: [Node<HTML.HeadContext>] = [Node<HTML.HeadContext>](),
         titleSeparator: String = " | ",
         stylesheetPaths: [Path] = ["/styles.css"],
         rssFeedPath: Path? = .defaultForRSSFeed,
-        rssFeedTitle: String? = nil
+        rssFeedTitle: String? = nil,
+        //nodes: [Node<HTML.HeadContext>] = [Node<HTML.HeadContext>]()
+        _ nodes: Node<HTML.HeadContext>...
     ) -> Node {
         var title = location.title
 
