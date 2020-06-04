@@ -227,7 +227,8 @@ private extension Node where Context == HTML.BodyContext {
                     .h3(
                         .a(
                             .href(item.path),
-                            .markdownTitle(for: item, parser: parser)
+                            /*.markdownTitle(for: item, parser: parser)*/
+                            .text(item.title)
                         )
                     ),
                     .tagList(for: item, on: site),

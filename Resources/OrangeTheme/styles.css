@@ -39,7 +39,6 @@ header {
 
 @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     header {
-        /* "!important" is needed so that the set value gets overwritten */
         background-color: var(--main-header-color);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -48,7 +47,6 @@ header {
 
 @supports (not (backdrop-filter: blur(20px))) and (not (-webkit-backdrop-filter: blur(20px))) {
     header {
-        /* "!important" is needed so that the set value gets overwritten */
         background-color: var(--main-accent-color);
     }
 }
@@ -90,6 +88,9 @@ h1 {
 
 article h1 {
     margin-bottom: 0;
+}
+
+article h1 a, article h1 a {
     text-decoration: underline;
     text-decoration-color: var(--main-accent-color);
 }
