@@ -90,6 +90,11 @@ article h1 {
     margin-bottom: 0;
 }
 
+article h1 object {
+    height: 1em;
+    margin-left: 0.25em;
+}
+
 article h1 a, article h1 a {
     text-decoration: underline;
     text-decoration-color: var(--main-accent-color);

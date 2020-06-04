@@ -7,7 +7,20 @@
 
 import Foundation
 
-struct SocialLink {
+protocol FontAwesomeIcon {
+    var icon: String { get }
+    var iconType: IconType { get }
+    var embedCss: Bool { get }
+}
+
+struct Icon: FontAwesomeIcon {
+    let icon: String
+    let iconType: IconType
+    let embedCss: Bool
+}
+
+struct SocialLink: FontAwesomeIcon {
+    var embedCss: Bool = true
     let title: String
     let displayName: String
     let url: URL

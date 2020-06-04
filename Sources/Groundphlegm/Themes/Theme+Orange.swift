@@ -14,7 +14,11 @@ extension Theme where Site == Groundphlegm {
     static var orange: Self {
         Theme(
             htmlFactory: OrangeHTMLFactory(),
-            resourcePaths: Set(["Resources/OrangeTheme/styles.css", "Resources/OrangeTheme/svg.css"] + SocialLink.icons.map{"Resources/OrangeTheme/svgs/\($0)"})
+            resourcePaths: Set([
+                "Resources/OrangeTheme/styles.css",
+                "Resources/OrangeTheme/svg.css",
+                "Resources/OrangeTheme/svgs/solid/link.svg"
+            ] + SocialLink.icons.map{"Resources/OrangeTheme/svgs/\($0)"})
         )
     }
 }
@@ -219,16 +223,14 @@ private extension Node where Context == HTML.BodyContext {
     }
 
     static func itemList(for items: [Item<Groundphlegm>], on site: Groundphlegm) -> Node {
-        let parser = MarkdownParser()
-        return .ul(
+        .ul(
             .class("item-list"),
             .forEach(items) { item in
                 .li(.article(
                     .h3(
                         .a(
                             .href(item.path),
-                            /*.markdownTitle(for: item, parser: parser)*/
-                            .text(item.title)
+                            .markdown(item.title)
                         )
                     ),
                     .tagList(for: item, on: site),

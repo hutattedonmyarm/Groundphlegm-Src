@@ -23,6 +23,7 @@ struct Groundphlegm: Website {
     var imagePath: Path? { nil }
     var booklists = [Booklist.empty(for: "Currently Reading")]
     var social = SocialLink.all
+    var linkPostIcon = Icon(icon: "link.svg", iconType: .solid, embedCss: true) //TODO: Icons as enum
     
     var dateTimeFormatter = DateFormatter(timeStyle: .medium, dateStyle: .medium)
     var dateFormatter: DateFormatter {
@@ -34,6 +35,10 @@ struct Groundphlegm: Website {
         let f = self.dateTimeFormatter
         f.dateStyle = .none
         return f
+    }
+    
+    func allIcons() -> [FontAwesomeIcon] {
+        social + [linkPostIcon]
     }
 }
 

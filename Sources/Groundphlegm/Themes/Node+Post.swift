@@ -14,7 +14,10 @@ extension Node where Context == HTML.BodyContext {
     static func post(for item: Item<Groundphlegm>, on site: Groundphlegm) -> Node {
         
         return .group(
-            .h1(.markdownTitle(for: item)),
+            .h1(
+                .markdownTitle(for: item),
+                .if(item.tags.contains(Tag("link")), .svgObject(data: "/" + site.linkPostIcon.icon))
+            ),
             .p(
                 .class("pubdate"),
                 .text("Published: "),
