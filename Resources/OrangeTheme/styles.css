@@ -251,6 +251,7 @@ a {
 .sidebar .list .cover {
     grid-row: 2 / -1;
     grid-column: 1;
+    max-width: 100%;
 }
 
 .sidebar .list .booktitle {
