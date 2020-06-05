@@ -1,6 +1,6 @@
 ---
 date: 2020-06-01 22:18
-description: Hey, I can put here whatever I want, I'm not yet displaying it anywhere!
+description: Hello ~~darkness my old friend~~ world!
 tags: article, meta
 title: Welcome to ~~the jungle~~ Groundphlegm, we got fun and games
 ---
