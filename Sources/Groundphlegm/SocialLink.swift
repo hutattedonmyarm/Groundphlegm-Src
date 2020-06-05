@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SocialLink: FontAwesomeIcon {
+struct SocialLink: FontAwesomeIcon, Equatable {
     var embedCss: Bool = true
     let title: String
     let displayName: String

@@ -13,7 +13,7 @@ protocol FontAwesomeIcon {
     var embedCss: Bool { get }
 }
 
-struct Icon: FontAwesomeIcon {
+struct Icon: FontAwesomeIcon, Equatable {
     let icon: String
     let iconType: IconType
     let embedCss: Bool

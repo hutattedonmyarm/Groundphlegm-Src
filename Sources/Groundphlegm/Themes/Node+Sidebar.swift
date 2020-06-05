@@ -33,7 +33,11 @@ extension Node where Context == HTML.BodyContext {
                             .class("social svg-image"),
                             .attribute(named: "role", value: "img"),
                             .attribute(named: "title", value: socialLink.title)),
-                        .a(.href(socialLink.url.absoluteString), .text(socialLink.displayName))
+                        .a(
+                            .href(socialLink.url.absoluteString),
+                            .text(socialLink.displayName),
+                            .if(socialLink == .mastodon, .attribute(named: "rel", value: "me"))
+                        )
                     )
                 }
             ),
