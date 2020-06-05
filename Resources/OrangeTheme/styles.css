@@ -300,3 +300,15 @@ s {
 footer a:hover {
   text-decoration-color: var(--main-accent-color);
 }
+
+blockquote {
+	padding-left: 5px;
+	border-left: 1px solid var(--main-accent-color);
+	font-size: smaller;
+	margin: 5px;
+}
+
+blockquote + blockquote {
+    margin-top: -11px;
+    padding-top: 11px;
+}
