@@ -31,6 +31,7 @@ extension HTML {
 private struct OrangeHTMLFactory: HTMLFactory {
     func makeHead(for location: Location, on site: Groundphlegm) -> Node<HTML.DocumentContext> {
         .head(for: location, on: site,
+            rssFeedPath: Path(Groundphlegm.feedPath),
             .link(
                 .rel(.preload),
                 .href("/svg.css"),
@@ -246,7 +247,7 @@ private extension Node where Context == HTML.BodyContext {
                         )
                     ),
                     .tagList(for: item, on: site),
-                    .p(.text(item.description))
+                    .p(.markdown(item.description))
                 ))
             }
         )
@@ -261,7 +262,7 @@ private extension Node where Context == HTML.BodyContext {
         })
     }
 
-    static func footer<T: Website>(for site: T) -> Node {
+    static func footer(for site: Groundphlegm) -> Node {
         return .footer(
             .p(
                 .text("Generated using "),
@@ -272,7 +273,7 @@ private extension Node where Context == HTML.BodyContext {
             ),
             .p(.a(
                 .text("RSS feed"),
-                .href("/feed.rss")
+                .href("/" + Groundphlegm.feedPath)
             ))
         )
     }
