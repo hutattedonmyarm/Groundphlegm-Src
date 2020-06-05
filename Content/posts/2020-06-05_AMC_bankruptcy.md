@@ -1,5 +1,5 @@
 ---
-date: 2020-06-06 08:33
+date: 2020-06-05 08:33
 description: AMC is going bankrupt, blames the current situation. Lots of monopolies involved too.
 tags: link, movie industry, disney, FCC
 title: AMC's bankruptcy is the first domino in monopolist collapse
