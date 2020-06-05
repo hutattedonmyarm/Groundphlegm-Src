@@ -22,9 +22,11 @@ struct Groundphlegm: Website {
     var language: Language { .english }
     var imagePath: Path? { nil }
     var booklists = [Booklist.empty(for: "Currently Reading")]
+    
     var social = SocialLink.all
-    //var linkPostIcon = Icon(icon: "link.svg", iconType: .solid, embedCss: true) //TODO: Icons as enum
     var icons: [Icon] = [.link]
+    
+    static var feedPath = "rss.xml"
     
     var dateTimeFormatter = DateFormatter(timeStyle: .medium, dateStyle: .medium)
     var dateFormatter: DateFormatter {
@@ -45,12 +47,13 @@ struct Groundphlegm: Website {
 
 let currentlyReading = Goodreads.currentlyReading()
 
+let rssConfig = RSSFeedConfiguration(targetPath: Path(Groundphlegm.feedPath), ttlInterval: 250, maximumItemCount: 30, indentation: .spaces(4))
 try Groundphlegm(booklists: [currentlyReading]).publish(using: [
     .addMarkdownFiles(),
     .copyResources(at: "/Content/images", to: "/images", includingFolder: false),
     .copyResources(),
     .generateHTML(withTheme: .orange),
-    .generateRSSFeed(including: [.posts]),
+    .generateRSSFeed(including: [.posts], config: rssConfig),
     .generateSiteMap(),
     .embedSvgStyles(),
     .deploy(using: .gitHub("hutattedonmyarm/Groundphlegm-Output", useSSH: true))
