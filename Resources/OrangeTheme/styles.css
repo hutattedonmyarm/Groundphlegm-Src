@@ -294,7 +294,7 @@ footer {
     color: #8a8a8a;
 }
 
-s {
+s, article a {
     text-decoration-color: var(--main-accent-color);
 }
 
