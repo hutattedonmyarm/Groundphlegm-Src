@@ -1,6 +1,6 @@
 ---
 date: 2020-06-11 07:32
-description: Black Lives Matter.
+description: A new proof-of-concept study about Saturns Hexagons and what could cause them
 tags: link, physics, space
 title: What causes Saturn’s strange polar cloud hexagon?
 detailsTitle: [What causes Saturn’s strange polar cloud hexagon?](https://arstechnica.com/science/2020/06/what-causes-saturns-strange-polar-cloud-hexagon/)
