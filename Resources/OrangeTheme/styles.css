@@ -131,7 +131,7 @@ a {
 
 .pubdate {
     margin-bottom: 20px;
-    font-weight: lighter;
+    font-weight: 300;
     font-size: smaller;
 }
 
@@ -312,4 +312,8 @@ blockquote {
 blockquote + blockquote {
     margin-top: -11px;
     padding-top: 11px;
+}
+
+strong, em, b {
+  color: var(--main-accent-color);
 }
