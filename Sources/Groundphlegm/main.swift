@@ -1,7 +1,6 @@
 import Foundation
 import Publish
 import Plot
-import OAuthSwift
 
 // This type acts as the configuration for your website.
 struct Groundphlegm: Website {
