@@ -9,13 +9,12 @@ let package = Package(
         .executable(name: "Groundphlegm", targets: ["Groundphlegm"])
     ],
     dependencies: [
-        .package(url: "https://github.com/johnsundell/publish.git", from: "0.3.0"),
-        .package(url: "https://github.com/OAuthSwift/OAuthSwift.git", .upToNextMajor(from: "2.1.0"))
+        .package(url: "https://github.com/johnsundell/publish.git", from: "0.3.0")
     ],
     targets: [
         .target(
             name: "Groundphlegm",
-            dependencies: ["Publish", "OAuthSwift"]
+            dependencies: ["Publish"]
         )
     ]
 )
