@@ -296,6 +296,12 @@ footer {
 
 s, article a {
     text-decoration-color: var(--main-accent-color);
+    transition: background-color 0.2s ease-in-out;
+}
+
+article p a:hover {
+  background-color: var(--main-accent-color);
+  color: var(--text-on-accent-color);
 }
 
 footer a:hover {
