@@ -1,6 +1,6 @@
 ---
 date: 2020-07-07 08:03
-description:
+description: The EU published its EN45554 standard, defining 5 categories of repairability
 tags: link, repairing
 title: Fixers Know What ‘Repairable’ Means—Now There’s a Standard for It
 detailsTitle: [Fixers Know What ‘Repairable’ Means—Now There’s a Standard for It](https://www.ifixit.com/News/35879/repairability-standard-en45554)
