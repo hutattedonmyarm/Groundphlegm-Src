@@ -1,6 +1,6 @@
 ---
 date: 2020-07-07 07:40
-description:
+description: Europe is planning to build a 100km long successor to the LHC
 tags: link, physics
 title: Europe officially sets its sights on a giant LHC successor
 detailsTitle: [Europe officially sets its sights on a giant LHC successor](https://arstechnica.com/science/2020/06/europe-officially-sets-its-sights-on-a-giant-lhc-successor/)
