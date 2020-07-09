@@ -183,6 +183,10 @@ a {
     display: inline-block;
 }
 
+ul ul, ul ol, ol ul, ol ol {
+    margin-left: 1em;
+}
+
 .content {
     margin-bottom: 40px;
 }
@@ -318,6 +322,10 @@ blockquote {
 blockquote + blockquote {
     margin-top: -11px;
     padding-top: 11px;
+}
+
+blockquote ul li {
+    list-style-position: inside;
 }
 
 strong, em, b {
