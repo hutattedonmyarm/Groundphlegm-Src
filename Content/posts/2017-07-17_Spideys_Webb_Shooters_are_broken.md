@@ -10,4 +10,4 @@ detailsTitle: [Webb space telescope launch delayed seven more months to late 202
 
 Good news!
 
-I’m super excited about the telescope and sad to see the delay, but I prefer a late launch to a botched one.
+I’m super excited about the telescope and sad to see the delay, but I prefer a late launch to a botched one. We are [used to JWT delays by now](https://xkcd.com/2014/) too!
