@@ -3,7 +3,7 @@ date: 2020-07-17 18:14
 description: The EU court rules against yet another data-sharing deal with the USA 
 tags: link, privacy
 title: EU court kills data-sharing deal with USA 
-detailsTitle: [EU court kills data-sharing deal with USA ](https://pluralistic.net/2020/07/16/text-adventures-resurgent/#nein)
+detailsTitle: [EU court kills data-sharing deal with USA](https://pluralistic.net/2020/07/16/text-adventures-resurgent/#nein)
 ---
 
 
