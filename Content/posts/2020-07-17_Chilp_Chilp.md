@@ -1,6 +1,7 @@
 ---
 date: 2020-07-17 18:35
 description: The new Twitter API fixes *some* of the more annoying issues with the current one
+Tags: link, social media
 title: Introducing a new and improved Twitter API
 detailsTitle: [Introducing a new and improved Twitter API](https://blog.twitter.com/developer/en_us/topics/tools/2020/introducing_new_twitter_api.html)
 ---
