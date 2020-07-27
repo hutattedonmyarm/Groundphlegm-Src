@@ -1,6 +1,6 @@
 ---
 date: 2020-07-26 15:10
-description: Worms Armageddon gets a new patch!
+description: Some BLM videos are getting removed, because they have musicologists playing during the protests
 Tags: link, copyright
 title: BLM footage censored by copyright bots
 detailsTitle: [BLM footage censored by copyright bots](https://pluralistic.net/2020/07/23/circuit-split/#dolphins-in-tuna-nets)
