@@ -1,7 +1,7 @@
 ---
 date: 2020-07-17 19:45
 description: Worms Armageddon gets a new patch!
-Tags: link, social media
+tags: link, social media
 title: Worms Armageddon Patch 3.8
 detailsTitle: [Worms Armageddon Patch 3.8](https://youtu.be/9LqDXVaMAH4)
 ---
