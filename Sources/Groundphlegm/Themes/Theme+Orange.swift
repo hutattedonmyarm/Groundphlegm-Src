@@ -275,6 +275,13 @@ private extension Node where Context == HTML.BodyContext {
                 .text("RSS feed"),
                 .href("/" + Groundphlegm.feedPath)
             ))
+            ,
+            .p(
+                .text("This blog is "),
+                .a(
+                .text("open source"),
+                .href("https://github.com/hutattedonmyarm/Groundphlegm-Src")
+            ))
         )
     }
 }
