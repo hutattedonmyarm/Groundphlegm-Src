@@ -334,3 +334,8 @@ blockquote ul li {
 strong, em, b {
   color: var(--main-accent-color);
 }
+
+.footnote {
+  border-top: 1px solid var(--main-accent-color);
+  font-size: small;
+}
