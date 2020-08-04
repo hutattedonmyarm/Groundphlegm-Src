@@ -1,6 +1,6 @@
 ---
 date: 2020-08-04 20:55
-description:
+description: SpaceX launched Crew Dragon with two Astronauts. It docked at the ISS and now returned safely back with both of them
 tags: link, space
 title: NASA Astronauts in SpaceX Capsule Make First Water Landing Since 1975
 detailsTitle: [NASA Astronauts in SpaceX Capsule Make First Water Landing Since 1975](https://www.nytimes.com/2020/08/02/science/spacex-nasa-return.html)
