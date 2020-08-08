@@ -51,6 +51,9 @@ try Groundphlegm(booklists: [currentlyReading]).publish(using: [
     .addMarkdownFiles(),
     .copyResources(at: "/Content/images", to: "/images", includingFolder: false),
     .copyResources(),
+    .mutateAllItems() { item in
+        item.tags = item.tags.map { Tag($0.string.lowercased()) }
+    },
     .generateHTML(withTheme: .orange),
     .generateRSSFeed(including: [.posts], config: rssConfig),
     .generateSiteMap(),
