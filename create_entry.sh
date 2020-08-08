@@ -9,7 +9,7 @@ message="${message//ä/ae}"
 message="${message//ö/oe}"
 message="${message//ü/ue}"
 message="${message//ß/ss}"
-message="${message//[^0-9a-zA-Z_-]}"
+message="${message//[^0-9a-zA-Z_\-.+]}"
 today=$(date +%y%y-%m-%d)
 now=$(date +'%y%y-%m-%d %H:%M')
 cat > "Content/posts/${today}_${message}.md" << EOL
