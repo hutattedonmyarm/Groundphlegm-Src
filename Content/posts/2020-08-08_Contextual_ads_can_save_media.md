@@ -1,6 +1,6 @@
 ---
 date: 2020-08-08 14:18
-description:
+description: Why contextual ads are not only better for the user, but also better for the site who is running them
 tags: link, ads, privacy
 title: Contextual ads can save media
 detailsTitle: [Contextual ads can save media](https://pluralistic.net/2020/08/05/behavioral-v-contextual/#contextual-ads)
@@ -8,7 +8,7 @@ detailsTitle: [Contextual ads can save media](https://pluralistic.net/2020/08/05
 
 This is about behavioural ads vs contextual ones. So what are each of them?
 
-> The mainstay of online advertising is "behavioral advertising" in which ads are placed based on dossiers of your activity and preferences that have been compiled by Big Tech giants and shadowy data-brokers.
+> The mainstay of online advertising is "behavioural advertising" in which ads are placed based on dossiers of your activity and preferences that have been compiled by Big Tech giants and shadowy data-brokers.
 
 In contrast to contextual ads:
 
