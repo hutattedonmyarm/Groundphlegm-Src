@@ -1,6 +1,6 @@
 ---
 date: 2020-08-16 19:40
-description:
+description: Apple doesn’t like having Microsoft’s xCloud in the App Store, because they’re control freaks
 tags: link, apple, microsoft, gaming, app store
 title: When Microsoft's ambitious 'Netflix of gaming' service launches in September, it won't arrive on Apple devices – here's why
 detailsTitle: [When Microsoft's ambitious 'Netflix of gaming' service launches in September, it won't arrive on Apple devices – here's why](https://www.businessinsider.com/apple-explains-why-xbox-game-pass-is-not-on-iphone-2020-8)
