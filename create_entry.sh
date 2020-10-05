@@ -23,9 +23,10 @@ detailsTitle: [$1]($2)
 EOL
 editor_path="/Applications/Pine.app/Contents/MacOS/Pine"
 editor_cmd="${editor_path} Content/posts/${today}_${message}.md"
-
+: '
 if test -f "${editor_path}"; then
     $editor_cmd &
 else
     edit "Content/posts/${today}_${message}.md"
 fi
+'
