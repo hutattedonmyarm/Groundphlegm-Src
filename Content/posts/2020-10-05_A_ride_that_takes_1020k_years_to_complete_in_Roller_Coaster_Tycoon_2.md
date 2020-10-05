@@ -1,6 +1,6 @@
 ---
 date: 2020-10-05 19:02
-description:
+description: Due to some pathfinding preferenes in RCT2 a well crafted mazes takes aged for our little visitors
 tags: link, video, gaming
 title: A ride that takes 10^20k years to complete in Roller Coaster Tycoon 2
 detailsTitle: [A ride that takes 10^20k years to complete in Roller Coaster Tycoon 2](https://www.youtube.com/watch?v=KVgoy_a_gWI)
