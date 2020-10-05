@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "path" : "deploy.sh"
+    }
+  },
+  "identifier" : "BE309D51-9798-401F-8071-9FFDDD37E133"
+}
