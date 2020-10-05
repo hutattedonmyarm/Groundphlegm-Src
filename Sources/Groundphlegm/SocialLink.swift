@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Max Nuding on 31.05.20.
 //
@@ -26,7 +26,7 @@ extension SocialLink {
             icon: "mastodon.svg"
         )
     }
-    
+
     static var github: SocialLink {
         return SocialLink(
             title: "Github",
@@ -36,7 +36,7 @@ extension SocialLink {
             icon: "github.svg"
         )
     }
-    
+
     static var twitter: SocialLink {
         return SocialLink(
             title: "Twitter",
@@ -46,7 +46,7 @@ extension SocialLink {
             icon: "twitter.svg"
         )
     }
-    
+
     static var email: SocialLink {
         return SocialLink(
             title: "Mail",
@@ -56,13 +56,23 @@ extension SocialLink {
             icon: "envelope.svg"
         )
     }
+
+    static var pixelfed: SocialLink {
+        return SocialLink(
+            title: "Pixelfed",
+            displayName: "@aymm@pixelfed.social",
+            url: URL(string: "https://pixelfed.social/@aymm")!,
+            iconType: .solid,
+            icon: "camera-retro-solid.svg"
+        )
+    }
 }
 
 extension SocialLink {
     static var all: [SocialLink] {
-        [.mastodon, .github, .twitter, .email]
+        [.mastodon, .pixelfed, .github, .twitter, .email]
     }
-    
+
     static var icons: [String] {
         all.map {"\($0.iconType)/\($0.icon)"}
     }
