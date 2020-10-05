@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "path" : "run.sh"
+    }
+  },
+  "identifier" : "034CB4A5-E8A7-4E54-AB37-3148A76C72C1"
+}
