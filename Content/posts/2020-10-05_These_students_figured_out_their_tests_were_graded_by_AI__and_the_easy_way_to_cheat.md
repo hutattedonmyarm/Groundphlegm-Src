@@ -16,6 +16,6 @@ Head -> Desk.
 
 I'm having a hard time calling this "AI". But more power to the students. Play stupid games, win stupid prices. Relying *completely* on the automatic grading without checking the output is plain idiotic
 
-> Edgenuity didn’t respond to repeated requests for comment, but the company’s online help center suggests this may be by design. According to the website, answers to certain questions receive 0% if they include no keywords, and 100% if they include at least one. 
+> Edgenuity didn’t respond to repeated requests for comment, but the company’s online help center suggests this may be by design. According to the website, answers to certain questions receive 0% if they include no keywords, and 100% if they include at least one.
 
 Incredible!
