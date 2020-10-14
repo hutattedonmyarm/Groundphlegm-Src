@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Max Nuding on 30.05.20.
 //
@@ -36,7 +36,7 @@ extension Node where Context == HTML.BodyContext {
                         .a(
                             .href(socialLink.url.absoluteString),
                             .text(socialLink.displayName),
-                            .if(socialLink == .mastodon, .attribute(named: "rel", value: "me"))
+                            .attribute(named: "rel", value: "me")
                         )
                     )
                 }
@@ -44,7 +44,7 @@ extension Node where Context == HTML.BodyContext {
             else: .div()
         )
     }
-    
+
     static func booklist(for booklist: Booklist) -> Node {
         .if(!booklist.isEmpty,
             .div(
