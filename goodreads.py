@@ -8,7 +8,7 @@ import sys
 from typing import Dict, List, Optional
 from rauth.service import OAuth1Service, OAuth1Session
 
-@dataclass  
+@dataclass
 class User:
   name: str
   user_id: int
@@ -31,14 +31,14 @@ class Goodreads:
   request_token_url = oauth_url + '/request_token'
   authorize_url = oauth_url + '/authorize'
   access_token_url = oauth_url + '/access_token'
-    
+
   def __init__(
       self,
-      consumer_key: str, 
-      consumer_secret: str, 
+      consumer_key: str,
+      consumer_secret: str,
       access_token: Optional[str] = None,
       access_token_secret: Optional[str] = None):
-      
+
     self.consumer_key = consumer_key
     self.consumer_secret = consumer_secret
     self.access_token = access_token
@@ -52,7 +52,7 @@ class Goodreads:
       authorize_url = Goodreads.authorize_url,
       access_token_url = Goodreads.access_token_url,
       base_url = Goodreads.base_url)
-      
+
     if self.access_token and self.access_token_secret:
         self.session = OAuth1Session(
         consumer_key = self.consumer_key,
@@ -61,9 +61,9 @@ class Goodreads:
         access_token_secret = self.access_token_secret)
     else:
       self.session = None
-      
+
     self._current_user: Optional[User] = None
-  
+
   def get_config(self) -> Dict[str, str]:
     return {
       'consumer_key': self.consumer_key,
@@ -71,7 +71,7 @@ class Goodreads:
       'access_token': self.access_token,
       'access_token_secret': self.access_token_secret
     }
-  
+
   def _ensure_session(self):
     if self.session:
       return
@@ -131,7 +131,7 @@ class Goodreads:
       for author in book_element.find('authors').findall('author'):
         authors.append(author.find('name').text)
       top_shelves = []
-      
+
       book = Book(
         book_id=book_id,
         work_id=work_id,
@@ -141,13 +141,15 @@ class Goodreads:
         started_at=datetime.datetime.isoformat(datetime.datetime.strptime(started_at.text, fmt)) if started_at != None else None,
         top_shelves=top_shelves,
         authors=authors)
-      books.append(book)  
+      books.append(book)
+    if not books:
+      print('Could not find any books on shelf ' + shelf_name)
     return books
-      
-  
+
+
   def get_currently_reading(self):
     return self.get_books_on_shelf('currently-reading')
-    
+
 CURRENT_DIR = os.path.dirname(__file__)
 CONFIG_FILE_NAME = 'goodreads_config.json'
 CONFIG_FILE_PATH = os.path.join(CURRENT_DIR, CONFIG_FILE_NAME)
@@ -166,7 +168,7 @@ if 'access_token' in config and config['access_token']:
 ACCESS_TOKEN_SECRET = None
 if 'access_token_secret' in config and config['access_token_secret']:
   ACCESS_TOKEN_SECRET = config['access_token_secret']
-  
+
 
 if 'consumer_key' not in config or not config['consumer_key'] or 'consumer_secret' not in config or not config['consumer_secret']:
   print('Please provide the keys "consumer_key" and "consumer_secret" in your config file')
@@ -186,4 +188,3 @@ with open(CONFIG_FILE_PATH, 'w') as cf:
 
 with open(os.path.join(CURRENT_DIR, 'currently_reading.json'), 'w') as cf:
   json.dump([dataclasses.asdict(b) for b in books], cf, indent=2)
-        
