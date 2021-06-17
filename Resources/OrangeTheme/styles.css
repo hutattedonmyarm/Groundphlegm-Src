@@ -1,12 +1,12 @@
 :root {
     --main-bg-color: #fff;
     --main-text-color: #000;
-    
+
     --main-header-color: rgba(193, 84, 1, 0.8);
     --main-accent-color: rgb(193, 84, 1);
     --highlight-background-color: rgb(193, 84, 1, 0.3);
     --text-on-accent-color: #eee;
-    
+
     --secondary-bg-color: #ddd;
 }
 
@@ -14,12 +14,12 @@
     :root {
         --main-bg-color: #333;
         --main-text-color: #fff;
-        
+
         --main-header-color: rgba(193, 84, 1, 0.8);
         --main-accent-color: rgb(193, 84, 1);
 	--highlight-background-color: rgb(193, 84, 1, 0.3);
         --text-on-accent-color: #fff;
-        
+
         --secondary-bg-color: #444;
     }
 }
@@ -338,4 +338,12 @@ strong, em, b {
 .footnote {
   border-top: 1px solid var(--main-accent-color);
   font-size: small;
+}
+
+pre.code {
+  background-color: var(--secondary-bg-color);
+  padding: 8px;
+  border-radius: 10px;
+  overflow: scroll;
+  margin: 8px 0;
 }
